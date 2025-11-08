@@ -1,0 +1,385 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Offers Section
+--------------------------------------------------------------*/
+.offers {
+  .premium-offer {
+    background: var(--surface-color);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    height: 100%;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+    }
+
+    .offer-header {
+      position: relative;
+
+      .offer-image-wrapper {
+        position: relative;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 280px;
+          object-fit: cover;
+          transition: transform 0.4s ease;
+        }
+
+        &:hover img {
+          transform: scale(1.08);
+        }
+
+        .discount-tag {
+          position: absolute;
+          top: 20px;
+          left: 20px;
+          background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), black 20%));
+          color: var(--contrast-color);
+          padding: 12px 16px;
+          border-radius: 50%;
+          text-align: center;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+          min-width: 70px;
+          min-height: 70px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          .discount-percent {
+            font-size: 18px;
+            font-weight: 800;
+            line-height: 1;
+          }
+
+          .discount-text {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1px;
+          }
+        }
+      }
+    }
+
+    .offer-details {
+      padding: 25px;
+
+      .offer-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+
+        .offer-type {
+          background: color-mix(in srgb, var(--accent-color), transparent 90%);
+          color: var(--accent-color);
+          padding: 6px 12px;
+          border-radius: 15px;
+          font-size: 12px;
+          font-weight: 600;
+          text-transform: uppercase;
+        }
+
+        .offer-duration {
+          color: color-mix(in srgb, var(--default-color), transparent 40%);
+          font-size: 13px;
+          font-weight: 500;
+        }
+      }
+
+      h3 {
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        line-height: 1.3;
+      }
+
+      p {
+        color: color-mix(in srgb, var(--default-color), transparent 25%);
+        line-height: 1.6;
+        margin-bottom: 20px;
+        font-size: 14px;
+      }
+
+      .price-comparison {
+        background: color-mix(in srgb, var(--heading-color), transparent 95%);
+        padding: 18px;
+        border-radius: 12px;
+        margin-bottom: 25px;
+
+        .price-row {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 8px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          &.highlighted {
+            .price-label {
+              color: var(--accent-color);
+              font-weight: 600;
+            }
+
+            .special-cost {
+              color: var(--accent-color);
+              font-size: 20px;
+              font-weight: 800;
+            }
+          }
+
+          .price-label {
+            font-size: 14px;
+            color: color-mix(in srgb, var(--default-color), transparent 30%);
+          }
+
+          .original-cost {
+            text-decoration: line-through;
+            color: color-mix(in srgb, var(--default-color), transparent 50%);
+            font-size: 16px;
+          }
+        }
+      }
+
+      .offer-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+
+        .btn-reserve {
+          background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), black 15%));
+          color: var(--contrast-color);
+          padding: 14px 28px;
+          border-radius: 30px;
+          font-weight: 600;
+          text-decoration: none;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 15px color-mix(in srgb, var(--accent-color), transparent 60%);
+
+          &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px color-mix(in srgb, var(--accent-color), transparent 40%);
+          }
+        }
+
+        .offer-expiry {
+          display: flex;
+          align-items: center;
+          color: color-mix(in srgb, var(--default-color), transparent 40%);
+          font-size: 13px;
+
+          i {
+            margin-right: 6px;
+            color: var(--accent-color);
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  .quick-offers-section {
+    background: color-mix(in srgb, var(--accent-color), transparent 97%);
+    padding: 40px 30px;
+    border-radius: 20px;
+    margin-top: 30px;
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 35px;
+
+      h4 {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      p {
+        color: color-mix(in srgb, var(--default-color), transparent 30%);
+        font-size: 16px;
+        margin: 0;
+      }
+    }
+
+    .offers-carousel {
+      .swiper-wrapper {
+        height: auto !important;
+      }
+
+      .swiper-pagination {
+        position: relative;
+        margin-top: 30px;
+
+        .swiper-pagination-bullet {
+          background: var(--accent-color);
+          opacity: 0.3;
+          width: 12px;
+          height: 12px;
+
+          &.swiper-pagination-bullet-active {
+            opacity: 1;
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+
+    .quick-offer-card {
+      background: var(--surface-color);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      height: 100%;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+      }
+
+      .card-image {
+        position: relative;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          transition: transform 0.3s ease;
+        }
+
+        &:hover img {
+          transform: scale(1.05);
+        }
+
+        .offer-badge {
+          position: absolute;
+          top: 12px;
+          right: 12px;
+          background: var(--heading-color);
+          color: var(--contrast-color);
+          padding: 6px 12px;
+          border-radius: 12px;
+          font-size: 11px;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+      }
+
+      .card-content {
+        padding: 20px;
+
+        h5 {
+          font-size: 18px;
+          font-weight: 600;
+          margin-bottom: 10px;
+          line-height: 1.3;
+        }
+
+        p {
+          color: color-mix(in srgb, var(--default-color), transparent 30%);
+          font-size: 13px;
+          line-height: 1.5;
+          margin-bottom: 15px;
+        }
+
+        .price-info {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin-bottom: 18px;
+
+          .old-price {
+            color: color-mix(in srgb, var(--default-color), transparent 60%);
+            text-decoration: line-through;
+            font-size: 14px;
+          }
+
+          .new-price {
+            color: var(--accent-color);
+            font-size: 18px;
+            font-weight: 700;
+          }
+        }
+
+        .quick-btn {
+          background: color-mix(in srgb, var(--accent-color), transparent 10%);
+          color: var(--contrast-color);
+          border: 2px solid var(--accent-color);
+          padding: 10px 20px;
+          border-radius: 20px;
+          font-weight: 500;
+          text-decoration: none;
+          transition: all 0.3s ease;
+          display: block;
+          text-align: center;
+          font-size: 14px;
+
+          &:hover {
+            background: var(--accent-color);
+            color: var(--contrast-color);
+            transform: translateY(-1px);
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 992px) {
+    .premium-offer {
+      .offer-details {
+        .offer-actions {
+          flex-direction: column;
+          align-items: stretch;
+
+          .offer-expiry {
+            justify-content: center;
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .quick-offers-section {
+      padding: 30px 20px;
+
+      .section-header {
+        h4 {
+          font-size: 24px;
+        }
+
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .premium-offer {
+      .offer-details {
+        padding: 20px;
+
+        .offer-meta {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 8px;
+        }
+
+        h3 {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

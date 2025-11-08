@@ -1,0 +1,264 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Events Cards Section
+--------------------------------------------------------------*/
+.events-cards {
+  .event-card {
+    background: var(--surface-color);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px color-mix(in srgb, var(--default-color), transparent 88%);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 92%);
+
+    &:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 25px 60px color-mix(in srgb, var(--default-color), transparent 70%);
+      border-color: color-mix(in srgb, var(--accent-color), transparent 80%);
+    }
+
+    .card-image {
+      position: relative;
+      height: 280px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.6s ease;
+      }
+
+      .card-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg,
+            color-mix(in srgb, var(--accent-color), transparent 70%) 0%,
+            color-mix(in srgb, var(--heading-color), transparent 60%) 100%);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+
+        .event-badge {
+          position: absolute;
+          top: 24px;
+          left: 24px;
+          width: 60px;
+          height: 60px;
+          background: var(--surface-color);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 8px 25px color-mix(in srgb, var(--default-color), transparent 80%);
+          transform: translateY(20px);
+          transition: all 0.4s ease;
+
+          i {
+            font-size: 24px;
+            color: var(--accent-color);
+          }
+        }
+      }
+    }
+
+    .card-body {
+      padding: 32px;
+
+      .event-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+
+        .event-category {
+          background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), var(--heading-color) 20%));
+          color: var(--contrast-color);
+          padding: 6px 16px;
+          border-radius: 20px;
+          font-size: 12px;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+
+        .event-capacity {
+          color: color-mix(in srgb, var(--default-color), transparent 40%);
+          font-size: 13px;
+          font-weight: 500;
+        }
+      }
+
+      h3 {
+        color: var(--heading-color);
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 16px;
+        line-height: 1.3;
+        transition: color 0.3s ease;
+      }
+
+      p {
+        color: color-mix(in srgb, var(--default-color), transparent 25%);
+        font-size: 15px;
+        line-height: 1.7;
+        margin-bottom: 24px;
+      }
+
+      .amenities-list {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 28px;
+
+        li {
+          color: color-mix(in srgb, var(--default-color), transparent 15%);
+          font-size: 14px;
+          margin-bottom: 10px;
+          display: flex;
+          align-items: center;
+
+          i {
+            color: var(--accent-color);
+            margin-right: 12px;
+            font-size: 16px;
+            font-weight: 600;
+          }
+        }
+      }
+
+      .card-footer {
+        border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+        padding-top: 24px;
+
+        .btn-explore {
+          display: inline-flex;
+          align-items: center;
+          color: var(--accent-color);
+          font-weight: 600;
+          font-size: 15px;
+          text-decoration: none;
+          transition: all 0.3s ease;
+          gap: 10px;
+
+          span {
+            transition: transform 0.3s ease;
+          }
+
+          i {
+            font-size: 18px;
+            transition: all 0.3s ease;
+          }
+
+          &:hover {
+            color: var(--heading-color);
+
+            span {
+              transform: translateX(-3px);
+            }
+
+            i {
+              transform: translateX(8px) scale(1.1);
+            }
+          }
+        }
+      }
+    }
+
+    &:hover {
+      .card-image {
+        img {
+          transform: scale(1.08);
+        }
+
+        .card-overlay {
+          opacity: 1;
+
+          .event-badge {
+            transform: translateY(0);
+          }
+        }
+      }
+
+      .card-body h3 {
+        color: var(--accent-color);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .event-card {
+      .card-image {
+        height: 220px;
+
+        .card-overlay .event-badge {
+          width: 50px;
+          height: 50px;
+          top: 18px;
+          left: 18px;
+
+          i {
+            font-size: 20px;
+          }
+        }
+      }
+
+      .card-body {
+        padding: 24px;
+
+        .event-meta {
+          margin-bottom: 14px;
+
+          .event-category {
+            font-size: 11px;
+            padding: 4px 12px;
+          }
+
+          .event-capacity {
+            font-size: 12px;
+          }
+        }
+
+        h3 {
+          font-size: 20px;
+          margin-bottom: 14px;
+        }
+
+        p {
+          font-size: 14px;
+          margin-bottom: 20px;
+        }
+
+        .amenities-list {
+          margin-bottom: 24px;
+
+          li {
+            font-size: 13px;
+            margin-bottom: 8px;
+
+            i {
+              font-size: 14px;
+              margin-right: 10px;
+            }
+          }
+        }
+
+        .card-footer {
+          padding-top: 20px;
+
+          .btn-explore {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 992px) {
+    .row>div:nth-child(n+3) {
+      margin-top: 2rem;
+    }
+  }
+}

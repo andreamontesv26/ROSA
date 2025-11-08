@@ -1,0 +1,85 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Amenities Cards Section
+--------------------------------------------------------------*/
+.amenities-cards {
+  .amenity-card {
+    background-color: var(--surface-color);
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    text-align: center;
+    height: 100%;
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+      border-color: var(--accent-color);
+    }
+  }
+
+  .amenity-icon {
+    margin-bottom: 25px;
+
+    i {
+      font-size: 48px;
+      color: var(--accent-color);
+      transition: all 0.3s ease;
+    }
+  }
+
+  .amenity-content {
+    h4 {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: var(--heading-color);
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 0;
+      color: color-mix(in srgb, var(--default-color), transparent 20%);
+    }
+  }
+
+  .btn-amenities {
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: color-mix(in srgb, var(--accent-color), black 10%);
+      color: var(--contrast-color);
+      transform: translateY(-2px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .amenity-card {
+      padding: 30px 25px;
+    }
+
+    .amenity-icon i {
+      font-size: 40px;
+    }
+
+    .amenity-content h4 {
+      font-size: 20px;
+    }
+
+    .btn-amenities {
+      padding: 12px 28px;
+      font-size: 15px;
+    }
+  }
+}
